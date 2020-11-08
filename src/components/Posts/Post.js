@@ -10,7 +10,7 @@ const Post = props => {
   //Is LikeSection getting all the props it needs to work correctly? Comments also wants its props!
   return (
     <div className='post-border'>
-      <PostHeader
+      <PostHeader 
         username={post.username}
         thumbnailUrl={post.thumbnailUrl}
       />
@@ -21,8 +21,8 @@ const Post = props => {
           src={post.imageUrl}
         />
       </div>
-      <LikeSection likePost={() => likePost(post.id)} numberOfLikes={props.likes}/>
-      <Comments comment={props.comments} />
+      <LikeSection likePost={() => likePost(post.id)} numberOfLikes={post.likes} />
+      <Comments comments={post.comments}  />
     </div>
   );
 };
