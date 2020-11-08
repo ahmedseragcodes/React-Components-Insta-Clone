@@ -6,12 +6,14 @@ const Posts = (props) => {
   // 🔥 Make sure the parent of Posts is passing the right props!
   const { likePost, posts } = props;
 
+  //Map through the posts array returning a Post component at each iteration.  Check the implementation of Post to see what props it requires!
   return (
     <div className='posts-container-wrapper'>
-      {/* Map through the posts array returning a Post component at each iteration */}
-      {/* Check the implementation of Post to see what props it requires! */}
+      {posts.map(function(item){
+        return <Post key={props.id} post={item} likePost={likePost} />
+      })}
     </div>
-  );
+  )
 };
 
 export default Posts;
