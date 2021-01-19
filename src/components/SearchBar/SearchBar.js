@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faHeart, faCircle, faCompass } from '@fortawesome/free-regular-svg-icons';
 import "./SearchBar.css";
+import Post from "../Posts/Post";
 
 const SearchBar = (props) => {
 
@@ -14,9 +15,10 @@ const onSearchChange=function(event){
 }
 
 const onSearchSubmit=function(event){
+  event.preventDefault();
  return posts.filter(function(post){
     if (post.username===searchTerm){
-      return post;
+      return <Post post={post} />;
     } else {
       return null;
     }
